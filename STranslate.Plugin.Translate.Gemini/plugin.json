@@ -1,0 +1,10 @@
+﻿{
+  "PluginID": "34ad0f43244e4e3bb327218245bbb21a",
+  "Name": "Gemini",
+  "Description": "Official Gemini plugin for STranslate",
+  "Author": "zggsong",
+  "Version": "1.0.0",
+  "Website": "https://github.com/STranslate/STranslate.Plugin.Translate.Gemini",
+  "ExecuteFileName": "STranslate.Plugin.Translate.Gemini.dll",
+  "IconPath": "icon.png"
+}

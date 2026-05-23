@@ -16,5 +16,7 @@
     <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_Content">編輯</sys:String>
     <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature">溫度控制</sys:String>
     <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature_Description">控制模型輸出的隨機性</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget">思考預算</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget_Description">限制模型的思考預算&#x0a;設置為 -1 表示自動，0 表示關閉，正整數表示思考預算的最大 token 數</sys:String>
 
 </ResourceDictionary>

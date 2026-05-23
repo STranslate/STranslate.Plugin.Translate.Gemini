@@ -11,6 +11,7 @@ public class Settings
         "gemini-3-pro-preview"
     ];
     public double Temperature { get; set; } = 0.7;
+    public double ThinkingBudget { get; set; } = -1;
 
     public List<Prompt> Prompts { get; set; } =
     [

@@ -3,7 +3,7 @@
   "Name": "Gemini",
   "Description": "Official Gemini plugin for STranslate",
   "Author": "zggsong",
-  "Version": "1.0.1",
+  "Version": "1.0.2",
   "Website": "https://github.com/STranslate/STranslate.Plugin.Translate.Gemini",
   "ExecuteFileName": "STranslate.Plugin.Translate.Gemini.dll",
   "IconPath": "icon.png"

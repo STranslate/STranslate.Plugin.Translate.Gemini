@@ -16,5 +16,7 @@
     <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_Content">Edit</sys:String>
     <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature">Temperature Control</sys:String>
     <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature_Description">Controls the randomness of the model's output</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget">Thinking Budget</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget_Description">Limits the model's thinking budget&#x0a;Set to -1 for auto, 0 for close, or a positive integer for the maximum thinking budget in tokens.</sys:String>
 
 </ResourceDictionary>

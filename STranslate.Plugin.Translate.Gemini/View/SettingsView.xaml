@@ -126,6 +126,30 @@
             </ikw:SimpleStackPanel>
         </ui:SettingsCard>
 
+        <!--  思考预算控制  -->
+        <ui:SettingsCard Description="{DynamicResource STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget_Description}" Header="{DynamicResource STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget}">
+            <ui:SettingsCard.HeaderIcon>
+                <ui:FontIcon Icon="{x:Static ui:FluentSystemIcons.Thinking_20_Regular}" />
+            </ui:SettingsCard.HeaderIcon>
+
+            <ikw:SimpleStackPanel Orientation="Horizontal" Spacing="8">
+                <Slider
+                    x:Name="PART_ThinkingBudgetSlider"
+                    MinWidth="200"
+                    IsSnapToTickEnabled="True"
+                    Maximum="5"
+                    Minimum="0"
+                    TickFrequency="1"
+                    TickPlacement="BottomRight"
+                    Ticks="0,1,2,3,4,5"
+                    Value="{Binding ThinkingBudgetIndex}" />
+
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontSize="{DynamicResource STControlFontSize12}"
+                    Text="{Binding ThinkingBudget}" />
+            </ikw:SimpleStackPanel>
+        </ui:SettingsCard>
 
         <!--  连接验证  -->
         <ui:SettingsCard Description="{DynamicResource PluginTranslateValidateDescription}" Header="{DynamicResource PluginTranslateValidate}">

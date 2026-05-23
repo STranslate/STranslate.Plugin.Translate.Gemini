@@ -150,10 +150,16 @@ public class Main : LlmTranslatePluginBase
         // 温度限定
         var temperature = Math.Clamp(Settings.Temperature, 0, 2);
 
+        var thinkingBudget = (int)Math.Clamp(Settings.ThinkingBudget, -1, 24576);
+
         var content = new
         {
             contents = messages.Select(e => new { role = e.Role, parts = new[] { new { text = e.Content } } }),
-            generationConfig = new { temperature },
+            generationConfig = new
+            {
+                temperature,
+                thinkingConfig = new { thinkingBudget }
+            },
             safetySettings = new[]
             {
                 new { category = "HARM_CATEGORY_HARASSMENT", threshold = "BLOCK_NONE"},         //骚扰内容。

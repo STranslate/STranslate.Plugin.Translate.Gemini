@@ -1,5 +1,6 @@
 using STranslate.Plugin.Translate.Gemini.View;
 using STranslate.Plugin.Translate.Gemini.ViewModel;
+using System.Text;
 using System.Text.Json.Nodes;
 using System.Windows.Controls;
 
@@ -181,13 +182,30 @@ public class Main : LlmTranslatePluginBase
             if (parsedData is null)
                 return;
 
-            // 替换原有的 FirstOrDefault 用法为 JsonArray 索引访问
+            // 取第一个候选的 parts。开启 includeThoughts 后，Gemini 会把思考内容以
+            // { "thought": true, "text": "..." } 的 part 形式返回，且排在最终答案之前；
+            // 需跳过思考 part，只拼接最终答案文本（与官方 GenAI SDK 一致）。
             var candidatesNode = parsedData["candidates"] as JsonArray;
             var firstCandidate = candidatesNode is not null && candidatesNode.Count > 0 ? candidatesNode[0] : null;
             var contentNode = firstCandidate?["content"];
             var partsNode = contentNode?["parts"] as JsonArray;
-            var firstPart = partsNode is not null && partsNode.Count > 0 ? partsNode[0] : null;
-            var contentValue = firstPart?["text"]?.ToString();
+
+            if (partsNode is null || partsNode.Count == 0)
+                return;
+
+            // 遍历所有 part，跳过 thought:true 的思考内容，只拼接其余 text
+            var sb = new StringBuilder();
+            foreach (var part in partsNode)
+            {
+                if (part?["thought"] is JsonValue thoughtVal && thoughtVal.TryGetValue(out bool isThought) && isThought)
+                    continue;
+
+                var text = part?["text"]?.ToString();
+                if (!string.IsNullOrEmpty(text))
+                    sb.Append(text);
+            }
+
+            var contentValue = sb.ToString();
 
             if (string.IsNullOrEmpty(contentValue))
                 return;

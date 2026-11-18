@@ -1,0 +1,22 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Url">URL</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Url_Description">Gemini API adresini ayarlayın.&#x0a;Genellikle URL’ye bir yol eklemeniz gerekmez.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey">API anahtarı</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey_Placeholder">API anahtarını girin</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey_Description">Gemini API anahtarınızı girin.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Model">Model seçin</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Header">İstem ayarları</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Description">Çeviri için kullanılacak istem şablonunu seçin veya düzenleyin.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Placeholder">İstem şablonu seçin</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_ToolTip">İstemi düzenle</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_Content">Düzenle</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature">Sıcaklık</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature_Description">Model çıktısının rastgeleliğini belirler.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget">Düşünme bütçesi</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget_Description">Otomatik ayar için −1, devre dışı bırakmak için 0 girin. Pozitif bir tam sayı, düşünme için kullanılabilecek en fazla belirteç sayısını belirler.</sys:String>
+
+</ResourceDictionary>

@@ -132,17 +132,7 @@ public partial class SettingsViewModel : ObservableObject, IDisposable
     {
         try
         {
-            // 选择模型
-            var model = _settings.Model.Trim();
-            model = string.IsNullOrEmpty(model) ? "gemini-flash-latest" : model;
-
-            UriBuilder uriBuilder = new(_settings.Url);
-            // 如果路径不是有效的API路径结尾，使用默认路径
-            if (uriBuilder.Path == "/")
-                uriBuilder.Path = $"/v1beta/models/{model}:streamGenerateContent";
-
-            // 加上 alt=sse 才是每个流传输结果为完整json，方便解析判断是否为最后一条
-            uriBuilder.Query = $"alt=sse&key={_settings.ApiKey}";
+            var (url, options) = GeminiRequest.Create(_settings);
 
             // 替换Prompt关键字
             var messages = (Main.Prompts.FirstOrDefault(x => x.IsEnabled) ?? throw new Exception("请先完善Prompt配置"))
@@ -178,7 +168,7 @@ public partial class SettingsViewModel : ObservableObject, IDisposable
                 }
             };
 
-            await _context.HttpService.StreamPostAsync(uriBuilder.Uri.ToString(), content, (x) => { });
+            await _context.HttpService.StreamPostAsync(url, content, _ => { }, options);
 
             ValidateResult = _context.GetTranslation("ValidationSuccess");
         }

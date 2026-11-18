@@ -1,0 +1,22 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Url">URL</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Url_Description">نشانی API جمینای را تنظیم کنید.&#x0a;معمولاً نیازی به افزودن مسیر به نشانی نیست.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey">کلید API</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey_Placeholder">کلید API را وارد کنید</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey_Description">کلید API جمینای را وارد کنید.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Model">انتخاب مدل</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Header">تنظیمات دستور</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Description">الگوی دستور ترجمه را انتخاب یا ویرایش کنید.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Placeholder">انتخاب الگوی دستور</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_ToolTip">ویرایش دستور</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_Content">ویرایش</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature">دما</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature_Description">میزان تصادفی بودن پاسخ‌های مدل را تنظیم می‌کند.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget">بودجهٔ تفکر</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget_Description">برای حالت خودکار مقدار ‎−۱‎ و برای غیرفعال کردن مقدار ۰ را وارد کنید. عدد صحیح مثبت حداکثر تعداد توکن‌های تفکر را تعیین می‌کند.</sys:String>
+
+</ResourceDictionary>

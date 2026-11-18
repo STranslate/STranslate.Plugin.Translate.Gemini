@@ -62,44 +62,12 @@ public class Main : LlmTranslatePluginBase
         LangEnum.Polish => "Polish",
         LangEnum.Dutch => "Dutch",
         LangEnum.Ukrainian => "Ukrainian",
+        LangEnum.Uzbek => "Uzbek",
+        LangEnum.Uyghur => "Uyghur",
         _ => "Requires you to identify automatically"
     };
 
-    public override string? GetTargetLanguage(LangEnum langEnum) => langEnum switch
-    {
-        LangEnum.Auto => "Requires you to identify automatically",
-        LangEnum.ChineseSimplified => "Simplified Chinese",
-        LangEnum.ChineseTraditional => "Traditional Chinese",
-        LangEnum.Cantonese => "Cantonese",
-        LangEnum.English => "English",
-        LangEnum.Japanese => "Japanese",
-        LangEnum.Korean => "Korean",
-        LangEnum.French => "French",
-        LangEnum.Spanish => "Spanish",
-        LangEnum.Russian => "Russian",
-        LangEnum.German => "German",
-        LangEnum.Italian => "Italian",
-        LangEnum.Turkish => "Turkish",
-        LangEnum.PortuguesePortugal => "Portuguese",
-        LangEnum.PortugueseBrazil => "Portuguese",
-        LangEnum.Vietnamese => "Vietnamese",
-        LangEnum.Indonesian => "Indonesian",
-        LangEnum.Thai => "Thai",
-        LangEnum.Malay => "Malay",
-        LangEnum.Arabic => "Arabic",
-        LangEnum.Hindi => "Hindi",
-        LangEnum.MongolianCyrillic => "Mongolian",
-        LangEnum.MongolianTraditional => "Mongolian",
-        LangEnum.Khmer => "Central Khmer",
-        LangEnum.NorwegianBokmal => "Norwegian Bokmål",
-        LangEnum.NorwegianNynorsk => "Norwegian Nynorsk",
-        LangEnum.Persian => "Persian",
-        LangEnum.Swedish => "Swedish",
-        LangEnum.Polish => "Polish",
-        LangEnum.Dutch => "Dutch",
-        LangEnum.Ukrainian => "Ukrainian",
-        _ => "Requires you to identify automatically"
-    };
+    public override string? GetTargetLanguage(LangEnum langEnum) => GetSourceLanguage(langEnum);
 
     public override void Init(IPluginContext context)
     {
@@ -124,17 +92,7 @@ public class Main : LlmTranslatePluginBase
             return;
         }
 
-        // 选择模型
-        var model = Settings.Model.Trim();
-        model = string.IsNullOrEmpty(model) ? "gemini-flash-latest" : model;
-
-        UriBuilder uriBuilder = new(Settings.Url);
-        // 如果路径不是有效的API路径结尾，使用默认路径
-        if (uriBuilder.Path == "/")
-            uriBuilder.Path = $"/v1beta/models/{model}:streamGenerateContent";
-
-        // 加上 alt=sse 才是每个流传输结果为完整json，方便解析判断是否为最后一条
-        uriBuilder.Query = $"alt=sse&key={Settings.ApiKey}";
+        var (url, options) = GeminiRequest.Create(Settings);
 
         // 替换Prompt关键字
         var messages = (Prompts.FirstOrDefault(x => x.IsEnabled) ?? throw new Exception("请先完善Prompt配置"))
@@ -170,7 +128,7 @@ public class Main : LlmTranslatePluginBase
             }
         };
 
-        await Context.HttpService.StreamPostAsync(uriBuilder.Uri.ToString(), content, msg =>
+        await Context.HttpService.StreamPostAsync(url, content, msg =>
         {
             if (string.IsNullOrEmpty(msg?.Trim()))
                 return;
@@ -215,6 +173,6 @@ public class Main : LlmTranslatePluginBase
                 contentValue = contentValue.TrimEnd('\n');
 
             result.Text += contentValue;
-        }, cancellationToken: cancellationToken);
+        }, options, cancellationToken);
     }
 }

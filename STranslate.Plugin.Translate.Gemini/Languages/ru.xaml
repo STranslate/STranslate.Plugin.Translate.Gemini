@@ -1,0 +1,22 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Url">URL</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Url_Description">Укажите адрес API Gemini.&#x0a;Обычно добавлять путь к URL не требуется.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey">Ключ API</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey_Placeholder">Введите ключ API</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ApiKey_Description">Введите ключ API Gemini.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Model">Выберите модель</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Header">Настройки промптов</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Description">Выберите или отредактируйте шаблон промпта для перевода.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Prompt_Placeholder">Выберите шаблон промпта</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_ToolTip">Редактировать промпт</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_EditPrompt_Content">Редактировать</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature">Температура</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_Temperature_Description">Управляет случайностью ответов модели.</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget">Бюджет рассуждений</sys:String>
+    <sys:String x:Key="STranslate_Plugin_Translate_STranslate.Plugin.Translate.Gemini_ThinkingBudget_Description">Значение −1 включает автоматический режим, а 0 отключает рассуждения. Положительное целое число задаёт максимальное количество токенов для рассуждений.</sys:String>
+
+</ResourceDictionary>
